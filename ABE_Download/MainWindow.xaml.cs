@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ABE_Download.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace ABE_Download
     /// </summary>
     public partial class MainWindow : Window
     {
+        public DownloadViewModel vm = new DownloadViewModel();
+        
         public MainWindow()
         {
+            DataContext = vm;
             InitializeComponent();
+            
         }
     }
 }

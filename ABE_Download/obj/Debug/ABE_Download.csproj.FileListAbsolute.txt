@@ -18,3 +18,5 @@ C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\obj\Debug\ABE_Download
 C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\obj\Debug\ABE_Download.csproj.CopyComplete
 C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\obj\Debug\ABE_Download.exe
 C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\obj\Debug\ABE_Download.pdb
+C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\obj\Debug\ABE_Download.csproj.Fody.CopyLocal.cache
