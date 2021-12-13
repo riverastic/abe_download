@@ -10,8 +10,12 @@
     <Window.DataContext>
         <viewModel:DownloadViewModel/>
     </Window.DataContext>
-    <StackPanel Orientation="Horizontal">
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Model.IsConnected}"/>
-        <Button Width="200" Height="40" Content="{Binding Model.IsConnected}" Command="{Binding DownloadCommand}"/>
-    </StackPanel>
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Model.IsConnected}"/>
+            <Button Width="200" Height="40" Content="{Binding Model.IsConnected}" Command="{Binding DownloadCommand}"/>
+            <ListView ItemsSource="{Binding Model.RemoteFileInfos}"/>
+        </StackPanel>
+    </Grid>
+    
 </Window>

@@ -21,7 +21,7 @@ namespace ABE_Download
     /// </summary>
     public partial class MainWindow : Window
     {
-        public DownloadViewModel vm = new DownloadViewModel();
+        public DownloadViewModel vm = new();
         
         public MainWindow()
         {

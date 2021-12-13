@@ -13,11 +13,11 @@ namespace ABE_Download.ViewModel
 {
     public class DownloadViewModel
     {
-        public DownloadModel Model { get; }
+        public DownloadModel Model { get; } = new();
+        public ObservableCollection<RemoteFileInfo> RemoteFileInfos = new();
         public ICommand DownloadCommand { get; set; }
         public DownloadViewModel()
         {
-            Model = new DownloadModel();
             DownloadCommand = new RelayCommand<Session>(s => { return Model.IsConnected; }, s => GetRemoteDirectoryInfos(Model.session));
         }
 
@@ -25,19 +25,20 @@ namespace ABE_Download.ViewModel
         {
             if (!s.Opened) s.Open(Model.sessionOptions);
             RemoteDirectoryInfo remoteDirectoryInfo = s.ListDirectory(Model.RemoteDir);
-            foreach (RemoteFileInfo fileInfo in remoteDirectoryInfo.Files.Where(f => f.IsDirectory && !f.Name.Contains("..")))
+            Model.RemoteFileInfos = new ObservableCollection<RemoteFileInfo>(remoteDirectoryInfo.Files.Where(f => f.IsDirectory && !f.Name.Contains("..")).Cast<RemoteFileInfo>());
+            foreach (RemoteFileInfo fileInfo in Model.RemoteFileInfos)
             {
                 //var opt = EnumerationOptions.EnumerateDirectories | EnumerationOptions.AllDirectories;
                 //var folders = s.EnumerateRemoteFiles(fileInfo.FullName, null, opt).Where(f => f.Name.Equals("12-11-2021")).FirstOrDefault();
-                //if (folders!=null)
+                //if (folders != null)
                 //{
                 //    MessageBox.Show(folders.FullName);
                 //}
                 
 
+
             }
             s.Close();
         }
-
     }
 }
