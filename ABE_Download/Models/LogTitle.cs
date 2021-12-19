@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace ABE_Download.Models
 {
-    public class DownloadInfoModel
+    public enum LogTitle
     {
-        public string RemoteDirectory { get; set; }
-        public string LocalDirectory { get; set; }
+        INFO,
+        WARNING,
+        ERROR,
     }
 }

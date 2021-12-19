@@ -18,9 +18,11 @@
     </Window.DataContext>
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Model.IsConnected}"/>
-            <Button Width="200" Height="40" Content="Scan" Command="{Binding ScanCommand}"/>
-            <ListView ItemsSource="{Binding Model.RemoteDownloadFolders}"/>
+            <Button Width="200" Height="40" Content="Scan" Command="{Binding ScanCommand}" IsEnabled="{Binding Model.IsConnected}"/>
+            <Button Width="200" Height="40" Content="Download" Command="{Binding DownloadCommand}" IsEnabled="{Binding Model.IsScanned}"/>
+            <DataGrid ItemsSource="{Binding Model.DownloadInfos}"/>
+            <DataGrid ItemsSource="{Binding Model.DownloadLogInfos}"/>
+
         </StackPanel>
     </Grid>
     

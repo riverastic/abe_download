@@ -76,6 +76,8 @@
     </ApplicationDefinition>
     <Compile Include="Models\ConnectionModel.cs" />
     <Compile Include="Models\DownloadInfoModel.cs" />
+    <Compile Include="Models\DownloadLogModel.cs" />
+    <Compile Include="Models\LogTitle.cs" />
     <Compile Include="ViewModel\DownloadViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Page Include="MainWindow.xaml">

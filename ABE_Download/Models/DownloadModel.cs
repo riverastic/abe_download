@@ -15,11 +15,15 @@ namespace ABE_Download.Models
     {
         public ConnectionModel Model { get; } = new();
         public SessionOptions SessionOptions { get; }
-        public Session Session { get; set; } 
-
+        public Session Session { get; set; }
+        public TransferOptions TransferOptions { get; set; }
+        public TransferOperationResult TransferResult { get; set; }
         public string RemoteDir = "/FROM SPI/LEXIS-NEXIS";
+        public string LocalDir { get; set; } = @"D:\test";
         public bool IsConnected { get; set; } = false;
-        public ObservableCollection<string> RemoteDownloadFolders { get; set; } = new();
+        public bool IsScanned { get; set; } = false;
+        public ObservableCollection<DownloadInfoModel> DownloadInfos { get; set; } = new();
+        public ObservableCollection<DownloadLogModel> DownloadLogInfos { get; set; } = new();
         public DownloadModel()
         {
             SessionOptions = new SessionOptions
