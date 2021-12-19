@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ABE_Download.Model
+namespace ABE_Download.Models
 {
     public class DownloadInfoModel
     {

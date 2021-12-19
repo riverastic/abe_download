@@ -21,13 +21,11 @@ namespace ABE_Download
     /// </summary>
     public partial class MainWindow : Window
     {
-        public DownloadViewModel vm = new();
+        public DownloadViewModel vm => (DownloadViewModel)DataContext;
         
         public MainWindow()
         {
-            DataContext = vm;
             InitializeComponent();
-            
         }
     }
 }

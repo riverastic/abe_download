@@ -20,3 +20,10 @@ C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\obj\Debug\ABE_Download
 C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\obj\Debug\ABE_Download.pdb
 C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\obj\Debug\ABE_Download.csproj.Fody.CopyLocal.cache
+C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\bin\Debug\Prism.dll
+C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\bin\Debug\Prism.pdb
+C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\bin\Debug\Prism.xml
+C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\DUC GIANG\source\repos\ABE_Download\ABE_Download\bin\Debug\System.Windows.Interactivity.xml

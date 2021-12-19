@@ -4,17 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ABE_Download"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:viewModel="clr-namespace:ABE_Download.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" x:Name="mainWindow">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding CheckConnectCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Window.DataContext>
         <viewModel:DownloadViewModel/>
     </Window.DataContext>
     <Grid>
         <StackPanel Orientation="Horizontal">
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Model.IsConnected}"/>
-            <Button Width="200" Height="40" Content="{Binding Model.IsConnected}" Command="{Binding DownloadCommand}"/>
-            <ListView ItemsSource="{Binding Model.RemoteFileInfos}"/>
+            <Button Width="200" Height="40" Content="Scan" Command="{Binding ScanCommand}"/>
+            <ListView ItemsSource="{Binding Model.RemoteDownloadFolders}"/>
         </StackPanel>
     </Grid>
     
