@@ -35,6 +35,9 @@ namespace ABE_Download.Models
                 Password = Model.Password,
                 SshHostKeyFingerprint = Model.SshHostKey,
             };
+            SessionOptions.AddRawSettings("ProxyMethod", "");
+            SessionOptions.AddRawSettings("ProxyHost", "");
+            SessionOptions.AddRawSettings("ProxyPort", "");
         }
     }
 }

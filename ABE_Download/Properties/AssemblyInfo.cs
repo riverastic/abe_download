@@ -7,11 +7,11 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle( "ABE_Download" )]
-[assembly: AssemblyDescription( "" )]
+[assembly: AssemblyTitle( "ABE Download" )]
+[assembly: AssemblyDescription( "ABE Download" )]
 [assembly: AssemblyConfiguration( "" )]
-[assembly: AssemblyCompany( "" )]
-[assembly: AssemblyProduct( "ABE_Download" )]
+[assembly: AssemblyCompany( "Pho Duc Giang" )]
+[assembly: AssemblyProduct( "ABE Download" )]
 [assembly: AssemblyCopyright( "Copyright ©  2021" )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]

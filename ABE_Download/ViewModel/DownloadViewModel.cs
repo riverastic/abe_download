@@ -98,7 +98,7 @@ namespace ABE_Download.ViewModel
                 
             if ( remoteFolders is not null && remoteFolders.Count() > 0 )
             {
-                var selectFolder = remoteFolders.FirstOrDefault( x => x.Name.Contains( "12-24-2021" ) && !x.FullName.Contains( "Related" ) );
+                var selectFolder = remoteFolders.FirstOrDefault( x => x.Name.Contains( "12-25-2021" ) && !x.FullName.Contains( "Related" ) );
                 if ( selectFolder is not null )
                 {
                     App.Current.Dispatcher.Invoke( () =>
