@@ -13,5 +13,18 @@ namespace ABE_Download
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup( object sender, StartupEventArgs e )
+        {
+            if ( e.Args.Length == 1 && e.Args[ 0 ] is not null && e.Args[ 0 ].Equals( "--download" ) || e.Args[ 0 ].Equals( "--dl" ) )
+            {
+                MainWindow wnd = new MainWindow();
+                wnd.ShowDialog();
+                wnd.BringIntoView();
+            }
+            else
+            {
+                Environment.Exit( 0 );
+            }
+        }
     }
 }
