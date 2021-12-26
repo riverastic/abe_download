@@ -20,10 +20,8 @@ namespace ABE_Download
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
-        public DownloadViewModel vm => (DownloadViewModel)DataContext;
-        
-        public MainWindow()
+    {        
+        public  MainWindow()
         {
             InitializeComponent();
         }

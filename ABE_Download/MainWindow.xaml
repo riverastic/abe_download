@@ -6,24 +6,85 @@
         xmlns:local="clr-namespace:ABE_Download"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:viewModel="clr-namespace:ABE_Download.ViewModel"
+        xmlns:ctrlEx="clr-namespace:ABE_Download.Extensions"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" x:Name="mainWindow">
+        Title="{Binding Model.Status}" ResizeMode="NoResize" Height="400" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding CheckConnectCommand}"/>
+            <i:InvokeCommandAction Command="{Binding ScanAndDownloadCommand}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <Window.DataContext>
         <viewModel:DownloadViewModel/>
     </Window.DataContext>
-    <Grid>
-        <StackPanel Orientation="Horizontal">
-            <Button Width="200" Height="40" Content="Scan" Command="{Binding ScanCommand}" IsEnabled="{Binding Model.IsConnected}"/>
-            <Button Width="200" Height="40" Content="Download" Command="{Binding DownloadCommand}" IsEnabled="{Binding Model.IsScanned}"/>
-            <DataGrid ItemsSource="{Binding Model.DownloadInfos}"/>
-            <DataGrid ItemsSource="{Binding Model.DownloadLogInfos}"/>
-
+    <Window.Resources>
+        <Style TargetType="ItemsControl">
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+    </Window.Resources>
+    <GroupBox Header="ABE Downloader" Margin="10">
+        <StackPanel>
+            <Expander Header="Scanned Folders" IsExpanded="{Binding Expander1}">
+                <Grid HorizontalAlignment="Left" Height="320">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" ctrlEx:AutoScrollBehavior.AutoScroll="True">
+                        <ItemsControl ItemsSource="{Binding Model.DownloadInfos}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <ctrlEx:GridControl ShowCustomGridLines="True" GridLineBrush="Black" GridLineThickness="1">
+                                        <ctrlEx:GridControl.Resources>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Margin" Value="5"/>
+                                                <Setter Property="FontFamily" Value="Segoe UI"/>
+                                                <Setter Property="FontSize" Value="10"/>
+                                                <Setter Property="HorizontalAlignment" Value="Left"/>
+                                                <Setter Property="VerticalAlignment" Value="Center"/>
+                                            </Style>
+                                        </ctrlEx:GridControl.Resources>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="450" />
+                                            <ColumnDefinition Width="450" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="{Binding RemoteDirectory}" />
+                                        <TextBlock Grid.Column="1" Text="{Binding LocalDirectory}" />
+                                    </ctrlEx:GridControl>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
+            </Expander>
+            <Expander Header="Download Zone" IsExpanded="{Binding Expander2}">
+                <Grid HorizontalAlignment="Left" Height="280">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" ctrlEx:AutoScrollBehavior.AutoScroll="True">
+                        <ItemsControl ItemsSource="{Binding Model.DownloadLogInfos}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <ctrlEx:GridControl ShowCustomGridLines="True" GridLineBrush="Black" GridLineThickness="1">
+                                        <ctrlEx:GridControl.Resources>
+                                            <Style TargetType="TextBlock">
+                                                <Setter Property="Margin" Value="5"/>
+                                                <Setter Property="FontFamily" Value="Segoe UI"/>
+                                                <Setter Property="FontSize" Value="8"/>
+                                            </Style>
+                                        </ctrlEx:GridControl.Resources>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="100" />
+                                            <ColumnDefinition Width="60" />
+                                            <ColumnDefinition Width="650" />
+                                            <ColumnDefinition Width="100" />
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock HorizontalAlignment="Center" Text="{Binding LogTime}" />
+                                        <TextBlock HorizontalAlignment="Center" Grid.Column="1" Text="{Binding Title}" />
+                                        <TextBlock HorizontalAlignment="Left" Grid.Column="2" Text="{Binding FileName}" />
+                                        <ProgressBar HorizontalAlignment="Center" Width="80" Height="10" Grid.Column="3" Maximum="1" Value="{Binding Progress}" Visibility="{Binding Visible}" />
+                                    </ctrlEx:GridControl>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
+            </Expander>
         </StackPanel>
-    </Grid>
+    </GroupBox>
     
 </Window>

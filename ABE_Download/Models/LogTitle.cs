@@ -11,5 +11,8 @@ namespace ABE_Download.Models
         INFO,
         WARNING,
         ERROR,
+        CHECK,
+        CREATE,
+        DOWNLOAD,
     }
 }

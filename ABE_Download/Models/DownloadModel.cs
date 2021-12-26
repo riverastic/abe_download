@@ -24,6 +24,7 @@ namespace ABE_Download.Models
         public bool IsScanned { get; set; } = false;
         public ObservableCollection<DownloadInfoModel> DownloadInfos { get; set; } = new();
         public ObservableCollection<DownloadLogModel> DownloadLogInfos { get; set; } = new();
+        public string Status { get; set; } = "AB Extension";
         public DownloadModel()
         {
             SessionOptions = new SessionOptions
